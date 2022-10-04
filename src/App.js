@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import Header from './components/Header'
+import Switch from './components/Switch'
+import AppCard from './components/AppCard'
 import './App.css';
+import {Data} from './Data';
+import { useState } from 'react';
+
 
 function App() {
+  const [DataItem , setDataItem] = useState(Data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header />
+    <Switch DataItem={DataItem}/>
+    <AppCard DataItem={DataItem}/>
     </div>
   );
 }
